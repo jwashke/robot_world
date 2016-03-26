@@ -3,7 +3,7 @@
 <% @robots.each do |robot| %>
   <div class="robot-<%= robot.id %>">
     <h3>Robot:</h3>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3>
-    <form action="/robots/<%= robot.name %>/edit" method="GET">
+    <form action="/robots/<%= robot.id %>/edit" method="GET">
       <input type="submit" value="edit"/>
     </form>
     <form action="/robots/<%= robot.id %>" method="POST">

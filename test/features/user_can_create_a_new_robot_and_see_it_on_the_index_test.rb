@@ -1,6 +1,6 @@
 require_relative '../test_helper'
 
-class UserCreatesANewTask < Minitest::Test
+class UserCreatesANewRobot < Minitest::Test
   include TestHelpers
   include Capybara::DSL
 

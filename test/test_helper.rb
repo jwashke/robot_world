@@ -24,8 +24,8 @@ module TestHelpers
                            :city       => "city #{i + 1}",
                            :state      => "state #{i + 1}",
                            :avatar     => "#{i + 1}",
-                           :birthdate  => "date #{i + 1}",
-                           :date_hired => "date #{i + 1}",
+                           :birthdate  => "birthdate #{i + 1}",
+                           :date_hired => "datehired #{i + 1}",
                            :department => "department #{i + 1}" })
     end
   end

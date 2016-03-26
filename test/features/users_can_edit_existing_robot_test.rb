@@ -5,18 +5,17 @@ class UserEditsAnExistingRobot < Minitest::Test
   include Capybara::DSL
 
   def test_user_can_edit_a_robot
-    robot_world.create({
-      :name       => "JoshWashke",
-      :city       => "original city",
-      :state      => "original state",
-      :avatar     => "orignal avatar",
-      :birthdate  => "original birthdate",
-      :date_hired => "original datehired",
-      :department => "original department" })
+    create_robots(1)
 
     id = get_starting_id(1) + 1
 
-    visit "/robots/#{id}/edit"
+    visit '/'
+
+    click_link("Robot Index")
+
+    assert_equal "/robots", current_path
+
+    click_button("edit")
 
     assert_equal "/robots/#{id}/edit", current_path
 

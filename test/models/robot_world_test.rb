@@ -12,8 +12,8 @@ class RobotWorldTest < Minitest::Test
     assert_equal "city 1", robot.city
     assert_equal "state 1", robot.state
     assert_equal "1", robot.avatar
-    assert_equal "date 1", robot.birthdate
-    assert_equal "date 1", robot.date_hired
+    assert_equal "birthdate 1", robot.birthdate
+    assert_equal "datehired 1", robot.date_hired
     assert_equal "department 1", robot.department
   end
 
