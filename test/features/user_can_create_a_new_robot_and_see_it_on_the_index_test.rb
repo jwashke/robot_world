@@ -26,7 +26,6 @@ class UserCreatesANewTask < Minitest::Test
     assert_equal "/robots", current_path
 
     within(".robot-#{id}") do
-      save_and_open_page
       assert page.has_content?("Josh Washke")
     end
   end

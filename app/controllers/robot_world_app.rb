@@ -44,5 +44,5 @@ class RobotWorldApp < Sinatra::Base
       database = Sequel.sqlite('db/robot_world.sqlite')
     end
     @robot_world ||= RobotWorld.new(database)
-end
+  end
 end

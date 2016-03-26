@@ -6,13 +6,13 @@ class UserEditsAnExistingRobot < Minitest::Test
 
   def test_user_can_edit_a_robot
     robot_world.create({
-      "name"       => "JoshWashke",
-      "city"       => "original city",
-      "state"      => "original state",
-      "avatar"     => "orignal avatar",
-      "birthdate"  => "original birthdate",
-      "date_hired" => "original datehired",
-      "department" => "original department" })
+      :name       => "JoshWashke",
+      :city       => "original city",
+      :state      => "original state",
+      :avatar     => "orignal avatar",
+      :birthdate  => "original birthdate",
+      :date_hired => "original datehired",
+      :department => "original department" })
 
     id = get_starting_id(1) + 1
 
@@ -20,7 +20,7 @@ class UserEditsAnExistingRobot < Minitest::Test
 
     assert_equal "/robots/#{id}/edit", current_path
 
-    fill_in 'robot[name]',       with: "updatedname"
+    fill_in 'robot[name]',       with: "updated name"
     fill_in 'robot[city]',       with: "updated city"
     fill_in 'robot[state]',      with: "updated state"
     fill_in 'robot[avatar]',     with: "updated avatar"
@@ -30,10 +30,13 @@ class UserEditsAnExistingRobot < Minitest::Test
 
     click_button("submit")
 
-    # assert_equal "/robots/#{id}", current_path
-    #
-    # assert page.has_content?("updatedname")
-    # assert page.has_content?("updated city")
-    # assert page.has_content?("updated state")
+    assert_equal "/robots/#{id}", current_path
+
+    assert page.has_content?("updated name")
+    assert page.has_content?("updated city")
+    assert page.has_content?("updated state")
+    assert page.has_content?("updated birthdate")
+    assert page.has_content?("updated datehired")
+    assert page.has_content?("updated department")
   end
 end
