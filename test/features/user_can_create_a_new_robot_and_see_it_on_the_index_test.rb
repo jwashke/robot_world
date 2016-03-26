@@ -25,7 +25,7 @@ class UserCreatesANewRobot < Minitest::Test
 
     assert_equal "/robots", current_path
 
-    within(".robot-#{id}") do
+    within("#robot-#{id}") do
       assert page.has_content?("Josh Washke")
     end
   end

@@ -14,7 +14,7 @@ class UserDeletesARobot < Minitest::Test
     click_link("Robot Index")
 
     assert_equal "/robots", current_path
-    within(".robot-#{id}") do
+    within("#robot-#{id}") do
       assert page.has_content?("name 1")
     end
 
