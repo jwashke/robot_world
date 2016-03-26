@@ -1,9 +1,4 @@
-require 'models/robot_world'
-
-
 class RobotWorldApp < Sinatra::Base
-  set :root, File.expand_path("..", __dir__)
-
   get '/' do
     erb :dashboard
   end
@@ -22,32 +17,32 @@ class RobotWorldApp < Sinatra::Base
     redirect '/robots'
   end
 
-  get '/robots/:name' do |name|
-    @robot = robot_world.find(name)
-    #binding.pry
+  get '/robots/:id' do |id|
+    @robot = robot_world.find(id)
     erb :show
   end
 
-  get '/robots/:name/edit' do |name|
-    @robot = robot_world.find(name)
+  get '/robots/:id/edit' do |id|
+    @robot = robot_world.find(id)
     erb :edit
   end
 
-  set :method_override, true # allows us to use _method in form
-
-  put '/robots/:name' do |name|
-    robot_world.update(name, params[:robot])
-    name = params[:robot][:name].gsub(" ", "%20")
-    redirect "/robots/#{name}"
+  put '/robots/:id' do |id|
+    robot_world.update(id, params[:robot])
+    redirect "/robots/#{id}"
   end
 
-  delete '/robots/:name' do |name|
-    robot_world.delete(name)
+  delete '/robots/:id' do |id|
+    robot_world.destroy(id)
     redirect '/robots'
   end
 
   def robot_world
-    database = YAML::Store.new('db/robot_world')
+    if ENV["RACK_ENV"] == "test"
+      database = Sequel.sqlite('db/robot_world_test.sqlite')
+    else
+      database = Sequel.sqlite('db/robot_world.sqlite')
+    end
     @robot_world ||= RobotWorld.new(database)
-  end
+end
 end
