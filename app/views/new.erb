@@ -1,11 +1,45 @@
-<form action="/robots" method="post">
-  <h2>Enter a new robot:</h3>
-  Name: <input type="text" name="robot[name]"><br>
-  City: <input type="text" name="robot[city]"><br>
-  State: <input type="text" name="robot[state]"><br>
-  Avatar: <input type="text" name="robot[avatar]"><br>
-  Birthdate: <input type="text" name="robot[birthdate]"><br>
-  Date Hired: <input type="text" name="robot[date_hired]"><br>
-  Department: <input type="text" name="robot[department]"><br>
-  <input type='submit' value='create robot'/>
-</form>
+<h2 class="table-label">Create a New Robot:</h2>
+
+  <form action="/robots" method="post" class="form-box">
+
+    <fieldset class="form-group">
+      <label for"name">Name</label>
+      <input type="text" class="form-control" name="robot[name]" id="name">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"city">City</label>
+      <input type="text" class="form-control" name="robot[city]" id="city">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"state">State</label>
+      <input type="text" class="form-control" name="robot[state]" id="state">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"Avatar">Avatar</label>
+      <input type="text" class="form-control" name="robot[avatar]" id="avatar">
+      <small class="text-muted">Enter a number to generate your robots avatar</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"birthdate">Birthdate</label>
+      <input type="text" class="form-control" name="robot[birthdate]" id="birthdate">
+      <small class="text-muted">Enter in the form 2016-03-27</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"date_hired">Date Hired</label>
+      <input type="text" class="form-control" name="robot[date_hired]" id="date_hired">
+      <small class="text-muted">Enter in the form 2016-03-27</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"department">Department</label>
+      <input type="text" class="form-control" name="robot[department]" id="department">
+    </fieldset>
+
+    <input class="btn btn-primary btn form-button" type='submit' value='Create Robot'/>
+
+  </form>

@@ -11,8 +11,10 @@ class UserEditsAnExistingRobot < Minitest::Test
 
     visit '/'
 
-    click_link("Robot Index")
-
+    within(".content") do
+      click_link("Directory")
+    end
+    
     assert_equal "/robots", current_path
 
     click_button("edit")
@@ -27,7 +29,7 @@ class UserEditsAnExistingRobot < Minitest::Test
     fill_in 'robot[date_hired]', with: "updated datehired"
     fill_in 'robot[department]', with: "updated department"
 
-    click_button("submit")
+    click_button("Edit Robot")
 
     assert_equal "/robots/#{id}", current_path
 

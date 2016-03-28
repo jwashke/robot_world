@@ -1,4 +1,6 @@
 require_relative 'app/models/robot_world.rb'
+require_relative 'app/models/robot_analysis'
+require_relative 'app/models/robot'
 require 'faker'
 require 'sequel'
 
@@ -9,7 +11,8 @@ task :test do
 end
 
 task :faker  => :create_robot_world do
-  20.times do |i|
+  num_robots = 100
+  num_robots.times do |i|
     @robot_world.create({ :name       => Faker::Name.name,
                          :city       => Faker::Address.city,
                          :state      => Faker::Address.state,
@@ -25,6 +28,6 @@ task :delete_all => :create_robot_world do
 end
 
 task :create_robot_world do
-  database = Sequel.sqlite('db/robot_world.sqlite')
+  database = Sequel.sqlite('db/robot_world_development.sqlite')
   @robot_world ||= RobotWorld.new(database)
 end

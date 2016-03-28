@@ -1,11 +1,39 @@
-<a href="/robots">Robot Index</a>
+<div class="robot-box">
+  <h2 class="table-label"><%= @robot.name %></h2>
+  <img class="robot-img" src="http://robohash.org/<%= @robot.avatar %>">
 
-<img src="http://robohash.org/<%= @robot.avatar %>"
-<div class="robot">
-  <p><%= @robot.name %></p>
-  <p><%= @robot.city %></p>
-  <p><%= @robot.state %></p>
-  <p><%= @robot.birthdate %></p>
-  <p><%= @robot.date_hired %></p>
-  <p><%= @robot.department %></p>
+  <div class="robot table-responsive">
+    <table class="table center-table info-table">
+
+      <tr>
+        <td><strong>City:</strong></td>
+        <td><%= @robot.city %></td>
+      </tr>
+
+      <tr>
+        <td><strong>State:</strong></td>
+        <td><%= @robot.state %></td>
+      </tr>
+
+      <tr>
+        <td><strong>Birthdate:</strong></td>
+        <td><%= @robot.birthdate %></td>
+      </tr>
+
+      <tr>
+        <td><strong>Date Hired:</strong></td>
+        <td><%= @robot.date_hired %></td>
+      </tr>
+
+      <tr>
+        <td><strong>Department:</strong></td>
+        <td><%= @robot.department %></td>
+      </tr>
+
+    </table>
+  </div>
+
+  <p class="center btn-pad">
+    <a class="btn btn-primary btn-lg " href="/robots" role="button">Directory</a>
+  </p>
 </div>

@@ -7,7 +7,9 @@ class UserCreatesANewRobot < Minitest::Test
   def test_user_can_create_a_robot
     visit '/'
 
-    click_link("New Robot")
+    within(".content") do
+      click_link("Create Robot")
+    end
 
     assert_equal "/robots/new", current_path
 
@@ -19,7 +21,7 @@ class UserCreatesANewRobot < Minitest::Test
     fill_in 'robot[date_hired]', with: "02-01-2016"
     fill_in 'robot[department]', with: "engineering"
 
-    click_button("create robot")
+    click_button("Create Robot")
 
     id = get_starting_id(1) + 1
 

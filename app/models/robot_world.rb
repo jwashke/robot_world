@@ -1,10 +1,11 @@
-require 'yaml/store'
-
 class RobotWorld
-  attr_reader :database
+
+  attr_reader :database,
+              :robot_analysis
 
   def initialize(database)
     @database = database
+    @robot_analysis = RobotAnalysis.new(all)
   end
 
   def create(robot)
@@ -13,6 +14,10 @@ class RobotWorld
 
   def all
     database.from(:robots).map { |data| Robot.new(data) }
+  end
+
+  def count
+    all.count
   end
 
   def raw_robot(id)
@@ -38,7 +43,7 @@ class RobotWorld
     database.from(:robots).where(:id => id).delete
   end
 
-    def delete_all
-      database.from(:robots).delete
-    end
+  def delete_all
+    database.from(:robots).delete
+  end
 end
