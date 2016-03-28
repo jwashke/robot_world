@@ -18,6 +18,10 @@ module TestHelpers
     @robot_world ||= RobotWorld.new(database)
   end
 
+  def robot_analysis
+    robot_world.robot_analysis
+  end
+
   def create_robots(num = 2)
     num.times do |i|
       robot_world.create({ :name       => "name #{i + 1}",
@@ -25,7 +29,7 @@ module TestHelpers
                            :state      => "state #{i + 1}",
                            :avatar     => "#{i + 1}",
                            :birthdate  => "2016-01-0#{i + 1}",
-                           :date_hired => "datehired #{i + 1}",
+                           :date_hired => "2016-01-0#{i + 1}",
                            :department => "department #{i + 1}" })
     end
   end
