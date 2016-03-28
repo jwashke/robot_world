@@ -27,7 +27,7 @@ class UserCanViewDetailsForSingleRobot < Minitest::Test
     assert page.has_content?("city 1")
     assert page.has_content?("state 1")
     assert page.has_content?("2016-01-01")
-    assert page.has_content?("datehired 1")
+    assert page.has_content?("2016-01-01")
     assert page.has_content?("department 1")
   end
 end

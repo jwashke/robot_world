@@ -5,7 +5,6 @@ class RobotWorld
 
   def initialize(database)
     @database = database
-    @robot_analysis = RobotAnalysis.new(all)
   end
 
   def create(robot)
@@ -45,5 +44,9 @@ class RobotWorld
 
   def delete_all
     database.from(:robots).delete
+  end
+
+  def robot_analysis
+    robot_analysis = RobotAnalysis.new(all)
   end
 end
