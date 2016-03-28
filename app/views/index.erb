@@ -1,15 +1,22 @@
-<h1>All Robots</h1>
-<div class="robots">
-  <% @robots.each do |robot| %>
-    <div id="robot-<%= robot.id %>">
-      <h3>Robot:</h3>: <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h3>
-      <form action="/robots/<%= robot.id %>/edit" method="GET">
-        <input type="submit" value="edit"/>
-      </form>
-      <form action="/robots/<%= robot.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="delete"/>
-      </form>
-    </div>
-  <% end %>
-</div>
+
+  <h2 class="table-label">Directory</h2>
+  <table class="table center-table robots">
+    <% @robots.each do |robot| %>
+      <tr id="robot-<%= robot.id %>">
+        <td>
+          <h6 class="robot-name"><a href="/robots/<%= robot.id %>"><%= robot.name %></a></h6>
+        </td>
+          <td>
+          <form class="edit-button" action="/robots/<%= robot.id %>/edit" method="GET">
+            <input class="btn btn-primary" type="submit" value="edit"/>
+          </form>
+        </td>
+        <td>
+          <form class="delete-btn" action="/robots/<%= robot.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input class="btn btn-danger" type="submit" value="delete"/>
+          </form>
+        </td>
+
+    </tr>
+    <% end %>

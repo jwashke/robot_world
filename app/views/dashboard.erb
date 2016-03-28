@@ -1,6 +1,9 @@
-<h1>Welcome to Robot World</h1>
-
-<ul>
-  <li><a href="/robots">Robot Index</a></li>
-  <li><a href="/robots/new">New Robot</a></li>
-</ul>
+<div class="jumbotron white">
+  <h2 class="welcome center">Welcome to Robot World</h2>
+  <p class="center tagline">The worlds largest database of fake robots with <%= @count %> robots and counting!</p>
+  <p class="center">
+    <a class="btn btn-primary btn-lg btn-hero" href="/robots" role="button">Directory</a>
+    <a class="btn btn-primary btn-lg btn-hero" href="/robots/new" role="button">Create Robot</a>
+    <a class="btn btn-primary btn-lg btn-hero" href="/stats/age" role="button">Stats</a>
+  </p>
+</div>

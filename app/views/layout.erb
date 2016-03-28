@@ -3,8 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Robot World</title>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class ="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><a class="logo" href="/">Robot World</a></li>
+            <li><a href="/robots">Index</a></li>
+            <li><a href="/robots/new">Create</a></li>
+            <li><a href="/stats/age">Stats</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+      <div class="container-fluid body">
+        <section class="content">
+        <%= yield %>
+      </section>
+      </div>
   </body>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </html>

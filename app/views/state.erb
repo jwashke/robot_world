@@ -1,0 +1,24 @@
+<section>
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="/stats/age">Age</a></li>
+  <li role="presentation"><a href="/stats/year">Hired</a></li>
+  <li role="presentation"><a href="/stats/city">City</a></li>
+  <li role="presentation" class="active"><a href="#">State</a></li>
+  <li role="presentation"><a href="/stats/department">Department</a></li>
+</ul>
+    <h3 class="table-label">Number of Robots per State</h3>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered center-table">
+      <tr>
+        <td><strong>State</strong></td>
+        <td><strong>Number of Robots</strong></td>
+      </tr>
+      <% @robots_per_state.each do |state, num| %>
+        <tr>
+          <td><%= state %></td>
+          <td><%= num %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</section>

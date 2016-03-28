@@ -11,7 +11,9 @@ class UserCanViewIndexOfRobots < Minitest::Test
 
     visit '/'
 
-    click_link("Robot Index")
+    within(".content") do
+      click_link("Directory")
+    end
 
     assert_equal "/robots", current_path
 

@@ -10,8 +10,9 @@ class UserDeletesARobot < Minitest::Test
     id = get_starting_id(1) + 1
 
     visit '/'
-
-    click_link("Robot Index")
+    within(".content") do
+      click_link("Directory")
+    end
 
     assert_equal "/robots", current_path
     within("#robot-#{id}") do

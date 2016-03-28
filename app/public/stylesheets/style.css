@@ -1,0 +1,137 @@
+
+/*=======================================
+
+*/
+
+body {
+    background-color: #f2f2f3;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.body {
+  padding: 60px 0 0 0;
+}
+
+section {
+	margin:  10px auto;
+	max-width: 700px;
+}
+
+.content {
+	background-color: #ffffff;
+	border-radius: 5px;
+}
+
+.background {
+	background-color: #f2f2f3;
+}
+
+.nav-tabs {
+	background-color: #f2f2f3;
+}
+
+.table {
+	max-width: 60%;
+}
+
+.center-table {
+	margin: 10px auto !important;
+	float: none !important;
+}
+
+.table-label {
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+
+.edit-button .delete-button {
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+.btn-hero {
+	width: 25%;
+}
+
+.welcome {
+	font-size: 44px;
+}
+
+.center-box {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.form-box {
+	margin:   10px auto;
+	width: 80%;
+}
+
+.form-button {
+	margin: 10px auto;
+}
+
+.table-left {
+	float: left;
+}
+
+.info-table {
+	text-align: left;
+	max-width: 40%;
+}
+
+.btn-pad {
+	padding: 20px;
+}
+
+.logo {
+	color: #ffffff;
+	font-size: 18px;
+}
+
+.info-p {
+	margin: 20px auto;
+	padding: 0 0 20px 0;
+	text-align: center;
+	font-size: 24px;
+}
+
+.white {
+	background-color: #ffffff;
+}
+
+
+/*======================================
+GRID ITEMS
+======================================*/
+
+
+.robot-box {
+  text-align: center;
+  margin: 10px 0;
+  padding: 0;
+  background-color: #ffffff;
+  border-radius: 5px;
+	box-shadow: 5px 5px 10px #888888;
+}
+
+.robot-img {
+	display: block;
+  margin: auto;
+}
+
+.robot-name {
+  font: helvetica;
+  font-size: 16px;
+}

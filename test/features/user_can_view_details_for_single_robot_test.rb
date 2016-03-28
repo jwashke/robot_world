@@ -11,7 +11,7 @@ class UserCanViewDetailsForSingleRobot < Minitest::Test
 
     visit '/'
 
-    click_link("Robot Index")
+    click_link("Directory")
 
     assert_equal "/robots", current_path
 
@@ -26,7 +26,7 @@ class UserCanViewDetailsForSingleRobot < Minitest::Test
     assert page.has_content?("name 1")
     assert page.has_content?("city 1")
     assert page.has_content?("state 1")
-    assert page.has_content?("birthdate 1")
+    assert page.has_content?("2016-01-01")
     assert page.has_content?("datehired 1")
     assert page.has_content?("department 1")
   end

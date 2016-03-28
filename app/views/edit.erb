@@ -1,14 +1,48 @@
-<form action="/robots/<%= @robot.id %>" method="post">
-  <p>Edit</p>
+<h2 class="table-label">Edit <%= @robot.name %></h2>
+
+<form action="/robots/<%= @robot.id %>" method="post" class="form-box">
   <!--the below hidden input overrides our post method to a put. HTML forms are
    meant to create new content, this allows us to edit content-->
-  <input type="hidden" name="_method" value="put">
-  <input type="text" name="robot[name]" value="<%= @robot.name %>">
-  <input type="text" name="robot[city]" value="<%= @robot.city %>">
-  <input type="text" name="robot[state]" value="<%= @robot.state %>">
-  <input type="text" name="robot[avatar]" value="<%= @robot.avatar %>">
-  <input type="text" name="robot[birthdate]" value="<%= @robot.birthdate %>">
-  <input type="text" name="robot[date_hired]" value="<%= @robot.date_hired %>">
-  <input type="text" name="robot[department]" value="<%= @robot.department %>">
-  <input type="submit" value="submit">
-</form>
+   <input type="hidden" name="_method" value="put">
+
+    <fieldset class="form-group">
+      <label for"name">Name</label>
+      <input type="text" class="form-control" name="robot[name]" id="name" value="<%= @robot.name %>">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"city">City</label>
+      <input type="text" class="form-control" name="robot[city]" id="city" value="<%= @robot.city %>">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"state">State</label>
+      <input type="text" class="form-control" name="robot[state]" id="state" value="<%= @robot.state %>">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"Avatar">Avatar</label>
+      <input type="text" class="form-control" name="robot[avatar]" id="avatar" value="<%= @robot.avatar %>">
+      <small class="text-muted">Enter a number to generate your robots avatar</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"birthdate">Birthdate</label>
+      <input type="text" class="form-control" name="robot[birthdate]" id="birthdate" value="<%= @robot.birthdate %>">
+      <small class="text-muted">Enter in the form 2016-03-27</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"date_hired">Date Hired</label>
+      <input type="text" class="form-control" name="robot[date_hired]" id="date_hired" value="<%= @robot.date_hired %>">
+      <small class="text-muted">Enter in the form 2016-03-27</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for"department">Department</label>
+      <input type="text" class="form-control" name="robot[department]" id="department" value="<%= @robot.department %>">
+    </fieldset>
+
+    <input class="btn btn-primary btn form-button" type='submit' value='Edit Robot'/>
+
+  </form>
